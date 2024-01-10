@@ -58,12 +58,14 @@ pub fn __start_task__(message: String) {
 	// cannot panic.
 	let mut tasks = TASKS.lock().unwrap();
 
-	// adjust the offset (from bottom row) of each task
-	for task in tasks.iter_mut() {
-		task.row_offset += 1;
-	}
+	if tasks.len() > 0 {
+		// adjust the offset (from bottom row) of each task
+		for task in tasks.iter_mut() {
+			task.row_offset += 1;
+		}
 
-	println!();
+		println!();
+	}
 
 	if let Some(last_row) = tasks.last().map(|task| task.row_offset) {
 		print!("\x1b[s");
