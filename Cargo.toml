@@ -1,0 +1,8 @@
+[package]
+name = "jeflog"
+description = "A lightweight, responsive, task-based logging library"
+version = "0.1.0"
+edition = "2021"
+repository = "https://github.com/jeffcshelton/jeflog"
+license = "MIT"
+keywords = ["logging", "task"]
