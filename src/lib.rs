@@ -125,14 +125,14 @@ pub fn __end_task__(symbol: &str, message: String) {
 			print!("\x1b[u");
 		}
 
+		if tasks.len() == 0 {
+			println!();
+		}
+
 		_ = io::stdout().flush();
 	} else {
 		// if no task is running, just print the symbol and message
 		println!("{symbol} {message}");
-	}
-
-	if tasks.len() == 0 {
-		println!();
 	}
 }
 
